@@ -49,7 +49,7 @@ If you are working in Google Colab:
 
 | Role | Name | GitHub Username |
 |---|---|---|
-| Project Lead | _Name_ | `github-handle` |
+| Project Lead | Bhargav Patil | `github-handle` |
 | Data Lead | _Name_ | `github-handle` |
 | ETL Lead | _Name_ | `github-handle` |
 | Analysis Lead | _Name_ | `github-handle` |
