@@ -303,3 +303,7 @@ All analysis, code, and recommendations in this repository must be the original 
 ---
 
 *Newton School of Technology - Data Visualization & Analytics | Capstone 2*
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1734637 (folder)
