@@ -53,7 +53,7 @@ If you are working in Google Colab:
 | Data Lead | _Name_ | `github-handle` |
 | ETL Lead | _Name_ | `github-handle` |
 | Analysis Lead | _Name_ | `github-handle` |
-| Visualization Lead | _Name_ | `github-handle` |
+| Visualization Lead | Bhawana | `https://github.com/bhawanaydv` |
 | Strategy Lead | _Name_ | `github-handle` |
 | PPT and Quality Lead | _Name_ | `github-handle` |
 
