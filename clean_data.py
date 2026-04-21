@@ -20,14 +20,18 @@ cols = [
     'District Name',            # Geographic dimension
     'Gender',                   # Demographic
     'Sector',                   # Loan sector
+    'Residential Type',         # Urban/Rural indicator
+    'Enterprise Type',          # Business scale (Nano, MSME, etc.)
     'Loan Amount (Mixed Units)',# Core financial metric (needs cleaning)
     'Applicant_Monthly_Income', # Repayment capacity
+    'Loan_Tenure_Months',       # Loan duration
+    'Total_TAT_Days',           # Total processing time
     'Risk_Score',               # Creditworthiness
     'Repayment_Status'          # Target / outcome variable
 ]
 
 df = df[cols].copy()
-print(f"✅ STEP 1 — Columns reduced to 8: {list(df.columns)}")
+print(f"✅ STEP 1 — Columns reduced to 12: {list(df.columns)}")
 
 
 
@@ -77,6 +81,25 @@ print(f"✅ STEP 5 — Sector standardised | Missing after fill: {df['Sector'].i
 
 
 
+# ─────────────────────────────────────────────────────────────
+# STEP 6 — Standardise Residential Type
+# ─────────────────────────────────────────────────────────────
+df['Residential Type'] = df['Residential Type'].str.strip().str.title().fillna('Unknown')
+df['Residential Type'] = df['Residential Type'].where(
+    df['Residential Type'].isin(['Urban', 'Rural']),
+    other='Unknown'
+)
+print(f"✅ STEP 6 — Residential Type standardised | Unique: {df['Residential Type'].unique().tolist()}")
+
+
+# ─────────────────────────────────────────────────────────────
+# STEP 7 — Standardise Enterprise Type
+# ─────────────────────────────────────────────────────────────
+df['Enterprise Type'] = df['Enterprise Type'].str.strip().str.title().fillna('Unknown')
+print(f"✅ STEP 7 — Enterprise Type standardised | Missing after fill: {df['Enterprise Type'].isnull().sum()}")
+
+
+
 # Clean Loan Amount → unified numeric INR
 
 
@@ -99,7 +122,7 @@ def parse_loan_amount(val):
 
 df['Loan_Amount_INR'] = df['Loan Amount (Mixed Units)'].apply(parse_loan_amount)
 df = df.drop(columns=['Loan Amount (Mixed Units)'])
-print(f"✅ STEP 6 — Loan Amount parsed to INR | Missing: {df['Loan_Amount_INR'].isnull().sum()}")
+print(f"✅ STEP 8 — Loan Amount parsed to INR | Missing: {df['Loan_Amount_INR'].isnull().sum()}")
 
 
 
@@ -109,8 +132,10 @@ print(f"✅ STEP 6 — Loan Amount parsed to INR | Missing: {df['Loan_Amount_INR
 df['Loan_Amount_INR']         = df['Loan_Amount_INR'].fillna(df['Loan_Amount_INR'].median())
 df['Applicant_Monthly_Income']= df['Applicant_Monthly_Income'].fillna(df['Applicant_Monthly_Income'].median())
 df['Risk_Score']              = df['Risk_Score'].fillna(df['Risk_Score'].median())
+df['Loan_Tenure_Months']      = df['Loan_Tenure_Months'].fillna(df['Loan_Tenure_Months'].median())
+df['Total_TAT_Days']          = df['Total_TAT_Days'].fillna(df['Total_TAT_Days'].median())
 
-print(f"✅ STEP 7 — Missing values after imputation:")
+print(f"✅ STEP 9 — Missing values after imputation:")
 print(df.isnull().sum().to_string())
 
 
@@ -129,9 +154,11 @@ def cap_iqr_outliers(series: pd.Series) -> pd.Series:
     print(f"   → {series.name}: bounds [{lower:.2f}, {upper:.2f}] | {capped} values capped")
     return series.clip(lower=lower, upper=upper)
 
-print("✅ STEP 8 — Outlier capping (IQR):")
+print("✅ STEP 10 — Outlier capping (IQR):")
 df['Loan_Amount_INR']          = cap_iqr_outliers(df['Loan_Amount_INR'])
 df['Applicant_Monthly_Income'] = cap_iqr_outliers(df['Applicant_Monthly_Income'])
+df['Loan_Tenure_Months']       = cap_iqr_outliers(df['Loan_Tenure_Months'])
+df['Total_TAT_Days']           = cap_iqr_outliers(df['Total_TAT_Days'])
 # Risk score has a logical range [0, 100]
 df['Risk_Score'] = df['Risk_Score'].clip(0, 100)
 print(f"   → Risk_Score: clipped to logical range [0, 100]")
@@ -143,15 +170,19 @@ print(f"   → Risk_Score: clipped to logical range [0, 100]")
 df = df.rename(columns={
     'Application ID'         : 'Application_ID',
     'District Name'          : 'District_Name',
+    'Residential Type'       : 'Residential_Type',
+    'Enterprise Type'        : 'Enterprise_Type',
     'Applicant_Monthly_Income': 'Monthly_Income_INR'
 })
 
 df['Application_ID']    = df['Application_ID'].astype(int)
 df['Monthly_Income_INR']= df['Monthly_Income_INR'].round(2)
 df['Loan_Amount_INR']   = df['Loan_Amount_INR'].round(2)
+df['Loan_Tenure_Months']= df['Loan_Tenure_Months'].round(2)
+df['Total_TAT_Days']    = df['Total_TAT_Days'].round(2)
 df['Risk_Score']        = df['Risk_Score'].round(2)
 
-print(f"✅ STEP 9 — Columns renamed & types fixed")
+print(f"✅ STEP 11 — Columns renamed & types fixed")
 print(df.dtypes.to_string())
 
 
