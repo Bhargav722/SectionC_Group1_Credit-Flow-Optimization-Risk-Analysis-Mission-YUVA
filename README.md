@@ -57,7 +57,7 @@ If you are working in Google Colab:
 | Analysis Lead | _Name_ | `github-handle` |
 | Visualization Lead | Bhawana | `https://github.com/bhawanaydv` |
 | Strategy Lead | _Name_ | `github-handle` |
-| PPT and Quality Lead | Rohan | `github-handle` |
+| PPT and Quality Lead | Rohan | `https://github.com/rohannzzz` |
 
 ---
 
