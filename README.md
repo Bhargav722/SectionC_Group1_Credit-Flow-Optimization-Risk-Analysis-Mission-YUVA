@@ -54,6 +54,8 @@ If you are working in Google Colab:
 | ETL Lead | _Name_ | `github-handle` |
 | Analysis Lead | Kabir Sharma | https://github.com/Kabir-glitch |
 | Visualization Lead | _Name_ | `github-handle` |
+| Analysis Lead | _Name_ | `github-handle` |
+| Visualization Lead | Bhawana | `https://github.com/bhawanaydv` |
 | Strategy Lead | _Name_ | `github-handle` |
 | PPT and Quality Lead | _Name_ | `github-handle` |
 
@@ -303,7 +305,4 @@ All analysis, code, and recommendations in this repository must be the original 
 ---
 
 *Newton School of Technology - Data Visualization & Analytics | Capstone 2*
-<<<<<<< HEAD
-=======
 
->>>>>>> 1734637 (folder)
