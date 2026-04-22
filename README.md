@@ -55,7 +55,7 @@ If you are working in Google Colab:
 | Analysis Lead | Kabir Sharma | https://github.com/Kabir-glitch |
 | Visualization Lead | _Name_ | `github-handle` |
 | Analysis Lead | _Name_ | `github-handle` |
-| Visualization Lead | Bhawana | `https://github.com/bhawanaydv` |
+| Visualization Lead | Bhawana | `bhawanaydv` |
 | Strategy Lead | _Name_ | `github-handle` |
 | PPT and Quality Lead | Rohan | `https://github.com/rohannzzz` |
 
