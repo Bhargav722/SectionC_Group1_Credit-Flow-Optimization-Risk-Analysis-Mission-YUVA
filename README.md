@@ -51,7 +51,7 @@ If you are working in Google Colab:
 |---|---|---|
 | Project Lead | Bhargav Patil | `github-handle` |
 | Data Lead | Hardik Hathwal | `https://github.com/Kidrah-kun` |
-| ETL Lead | _Name_ | `github-handle` |
+| ETL Lead | Anant Singh | `github-handle` |
 | Analysis Lead | Kabir Sharma | https://github.com/Kabir-glitch |
 | Visualization Lead | _Name_ | `github-handle` |
 | Analysis Lead | _Name_ | `github-handle` |
