@@ -66,4 +66,4 @@ This document summarizes the cleaning steps applied to the dataset in `notebooks
 
 ## Notes
 - The cleaning process focuses on preparing the dataset for analysis by removing duplicates, standardizing categories, converting currency fields, handling missing values, and reducing extreme outliers.
-- This document is a high-level summary of the cleaning steps performed in the notebook.
+- This document is a high-level summary of the cleaning steps performed in the notebook
