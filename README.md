@@ -272,7 +272,7 @@ The project follows a structured 7-step workflow:
 
 **Individual Assets**
 
-- [ ] DVA-oriented resume updated to include this capstone
+- [x] DVA-oriented resume updated to include this capstone
 - [x] Portfolio link or project case study added
 
 ---
