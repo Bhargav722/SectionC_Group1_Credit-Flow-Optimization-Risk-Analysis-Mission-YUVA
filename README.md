@@ -49,7 +49,7 @@ If you are working in Google Colab:
 
 | Role | Name | GitHub Username |
 |---|---|---|
-| Project Lead | Bhargav Patil | Bhargav722 |
+| Project Lead | Bhargav Patil | [GitHub](https://github.com/Bhargav722) / [Portfolio](https://bhargav722.github.io/dva-portfolio/) |
 | Data Lead | Hardik Hathwal | `https://github.com/Kidrah-kun` |
 | ETL Lead | _Name_ | `github-handle` |
 | Analysis Lead | Kabir Sharma | https://github.com/Kabir-glitch |
@@ -273,7 +273,7 @@ The project follows a structured 7-step workflow:
 **Individual Assets**
 
 - [ ] DVA-oriented resume updated to include this capstone
-- [ ] Portfolio link or project case study added
+- [x] Portfolio link or project case study added
 
 ---
 
