@@ -1,1 +1,1 @@
-https://comforting-swan-6a403e.netlify.app
+https://hardik-hathwal-dva.netlify.app
