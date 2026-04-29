@@ -49,11 +49,13 @@ If you are working in Google Colab:
 
 | Role | Name | GitHub Username |
 |---|---|---|
-| Project Lead | Bhargav Patil | `github-handle` |
-| Data Lead | _Name_ | `github-handle` |
+| Project Lead | Bhargav Patil | Bhargav722 |
+| Data Lead | Hardik Hathwal | `https://github.com/Kidrah-kun` |
 | ETL Lead | _Name_ | `github-handle` |
-| Analysis Lead | _Name_ | `github-handle` |
+| Analysis Lead | Kabir Sharma | https://github.com/Kabir-glitch |
 | Visualization Lead | _Name_ | `github-handle` |
+| Analysis Lead | _Name_ | `github-handle` |
+| Visualization Lead | Bhawana | `https://github.com/bhawanaydv` |
 | Strategy Lead | _Name_ | `github-handle` |
 | PPT and Quality Lead | _Name_ | `github-handle` |
 
@@ -303,7 +305,4 @@ All analysis, code, and recommendations in this repository must be the original 
 ---
 
 *Newton School of Technology - Data Visualization & Analytics | Capstone 2*
-<<<<<<< HEAD
-=======
 
->>>>>>> 1734637 (folder)
