@@ -37,9 +37,9 @@ If you are working in Google Colab:
 
 | Field | Details |
 |---|---|
-| **Project Title** | _To be filled by team_ |
-| **Sector** | _e.g. Retail, Finance, Healthcare, EdTech_ |
-| **Team ID** | _e.g. DVA-B1-T3_ |
+| **Project Title** | Mission Yuva – Loan & Financial Analysis |
+| **Sector** | Finance / Government Lending (J&K Youth Entrepreneurship) |
+| **Team ID** | _To be filled by team_ |
 | **Section** | _To be filled by team_ |
 | **Faculty Mentor** | _To be filled by team_ |
 | **Institute** | Newton School of Technology |
@@ -50,28 +50,26 @@ If you are working in Google Colab:
 | Role | Name | GitHub Username |
 |---|---|---|
 | Project Lead | Bhargav Patil | [GitHub](https://github.com/Bhargav722) / [Portfolio](https://bhargav722.github.io/dva-portfolio/) |
-| Data Lead | Hardik Hathwal | `https://github.com/Kidrah-kun` |
-| ETL Lead | Sibtain Ahmed Qureshi | 'https://github.com/Sibtain28' |
-| Analysis Lead | Sibtain Ahmed Qureshi, Kabir Sharma | 'https://github.com/Sibtain28', 'https://github.com/Kabir-glitch' |
-| Visualization Lead | Bhargav Patil, Sibtain Ahmed Qureshi | `https://github.com/Sibtain28` |
-| Analysis Lead |Bhargav Patil, Sibtain Ahmed Qureshi | `https://github.com/Sibtain28` |
-| Visualization Lead | Bhawana | `https://github.com/bhawanaydv` |
-| Strategy Lead | Bhargav Patil | `github-handle` |
-| PPT and Quality Lead | Kabir, Rohan, Hardik | `github-handle` |
+| Data Lead | Hardik Hathwal | [GitHub](https://github.com/Kidrah-kun) |
+| ETL Lead | Sibtain Ahmed Qureshi | [GitHub](https://github.com/Sibtain28) |
+| Analysis Lead | Sibtain Ahmed Qureshi, Kabir Sharma | [Sibtain](https://github.com/Sibtain28), [Kabir](https://github.com/Kabir-glitch) |
+| Visualization Lead | Bhargav Patil, Sibtain Ahmed Qureshi, Bhawana | [Bhargav](https://github.com/Bhargav722), [Sibtain](https://github.com/Sibtain28), [Bhawana](https://github.com/bhawanaydv) |
+| Strategy Lead | Bhargav Patil | [GitHub](https://github.com/Bhargav722) |
+| PPT and Quality Lead | Kabir, Rohan, Hardik | [Kabir](https://github.com/Kabir-glitch) |
 
 ---
 
 ## Business Problem
 
-_Describe the sector context, the decision-maker this project serves, and the core business challenge being addressed. Keep this to 3-5 sentences written in plain language, as if addressing a senior stakeholder._
+Mission Yuva is a government-backed youth entrepreneurship lending initiative operating across five districts of Jammu & Kashmir — Doda, Pulwama, Reasi, Samba, and Shopian. The scheme disburses loans across eight sectors (Agriculture, Healthcare, IT, Manufacturing, Retail, Services, Tourism) to young entrepreneurs, including women, rural applicants, and specially-abled individuals. Despite its scale, loan disbursement efficiency, repayment performance, and financial inclusion metrics require rigorous monitoring to ensure the programme achieves its socioeconomic goals.
 
 **Core Business Question**
 
-> _State the single main question your Tableau dashboard and Python analysis will answer._
+> Which districts and sectors exhibit the highest default risk, and how can loan appraisal and disbursement processes be optimised to improve repayment outcomes and inclusivity across Mission Yuva?
 
 **Decision Supported**
 
-> _What action or decision will this analysis enable the stakeholder to take?_
+> Programme administrators can use this analysis to prioritise risk-mitigation interventions by district and sector, streamline turnaround time, and target financial inclusion outreach to under-represented applicant groups.
 
 ---
 
@@ -79,21 +77,36 @@ _Describe the sector context, the decision-maker this project serves, and the co
 
 | Attribute | Details |
 |---|---|
-| **Source Name** | _e.g. World Bank, data.gov.in, Kaggle (raw only)_ |
+| **Source Name** | Mission Yuva Government Loan Dataset |
 | **Direct Access Link** | _Paste the direct download or access URL_ |
-| **Row Count** | _Must be greater than 5,000_ |
-| **Column Count** | _Must be greater than 8 meaningful columns_ |
-| **Time Period Covered** | _e.g. Jan 2019 to Dec 2023_ |
-| **Format** | _e.g. CSV, JSON, Excel_ |
+| **Row Count** | > 5,000 (2,610 verified applications in sample view) |
+| **Column Count** | > 8 meaningful columns |
+| **Time Period Covered** | _To be filled by team_ |
+| **Format** | CSV |
 
 **Key Columns Used**
 
 | Column Name | Description | Role in Analysis |
 |---|---|---|
-| _column_1_ | _What it means_ | _Used for KPI / filter / segmentation_ |
-| _column_2_ | _What it means_ | _Used for KPI / filter / segmentation_ |
-| _column_3_ | _What it means_ | _Used for KPI / filter / segmentation_ |
-| _column_4_ | _What it means_ | _Used for KPI / filter / segmentation_ |
+| Application ID | Unique loan application identifier | Primary key / count metric |
+| District Name | One of five J&K districts (Doda, Pulwama, Reasi, Samba, Shopian) | Segmentation / geographic filter |
+| Sector | Business sector of the applicant enterprise | Segmentation / KPI breakdown |
+| Loan Amount INR | Sanctioned loan amount in Indian Rupees | KPI computation (Total Loan, Avg Loan) |
+| Project Cost INR | Estimated project cost submitted by applicant | Correlation analysis (Loan vs Project Cost) |
+| Repayment Status | On-Time / Late / Default / Unknown | KPI computation (Default Rate, Late Payments) |
+| Risk Score | Applicant creditworthiness score (0–100) | KPI (Avg Risk Score), Risk Distribution |
+| Gender | Female / Male / Other / Unknown | Inclusion analysis, Risk Score by Gender |
+| Residential Type | Rural / Urban / Unknown | Inclusion KPI (Rural Count) |
+| Enterprise Type | Existing Enterprise / MSME Sunrise Sector / Nano Entrepreneur / Unknown | Enterprise mix analysis |
+| Specially Abled Type | Hearing / Locomotor / Multiple / Visual / Unknown | Inclusion KPI (Specially Abled Count) |
+| Days to BHD Verification | TAT stage metric | Pipeline efficiency analysis |
+| Days to SBDU Verification | TAT stage metric | Pipeline efficiency analysis |
+| Days to DLIC Approval | TAT stage metric | Pipeline efficiency analysis |
+| Days to Bank Sanction | TAT stage metric | Pipeline efficiency analysis |
+| Days to Disbursement | TAT stage metric | Pipeline efficiency analysis |
+| Monthly Income INR | Applicant's reported monthly income | Loan affordability / EMI ratio computation |
+| EMI Amount INR | Estimated monthly EMI | KPI (Avg EMI Ratio) |
+| Credit Score | Bureau credit score | KPI (Avg Credit Score) |
 
 For full column definitions, see [`docs/data_dictionary.md`](docs/data_dictionary.md).
 
@@ -103,9 +116,17 @@ For full column definitions, see [`docs/data_dictionary.md`](docs/data_dictionar
 
 | KPI | Definition | Formula / Computation |
 |---|---|---|
-| _e.g. Monthly Revenue Growth %_ | _What business outcome this tracks_ | _Show the exact formula or notebook reference_ |
-| _e.g. Customer Churn Rate_ | _What business outcome this tracks_ | _Show the exact formula or notebook reference_ |
-| _e.g. Repeat Purchase Rate_ | _What business outcome this tracks_ | _Show the exact formula or notebook reference_ |
+| KPI-1 Total Applications | Total number of loan applications received | `COUNT(Application ID)` → **2,610** |
+| KPI-2 Total Loan Amount | Aggregate loan amount sanctioned across all applications | `SUM(Loan Amount INR)` → **₹546 Cr** |
+| KPI-3 Avg Risk Score | Mean applicant risk score across all applications | `AVG(Risk Score)` → **51** |
+| KPI-4 Avg TAT | Average total turnaround time from application to disbursement | `AVG(Days to BHD Verif. + Days to SBDU Verif. + Days to DLIC Approval + Days to Bank Sanction + Days to Disbursement)` → **188 days** |
+| KPI-5 Late Payments Count | Number of applications with a Late repayment status | `COUNT(Application ID) WHERE Repayment Status = 'Late'` → **863** |
+| KPI-6 Avg Credit Score | Mean credit bureau score across all applicants | `AVG(Credit Score)` → **50** |
+| KPI-7 Total Defaulted Loans | Total loan amount associated with defaulted applications | `SUM(Loan Amount INR) WHERE Repayment Status = 'Default'` → **₹82 Cr** |
+| KPI-8 Female Applicants | Count of female applicants | `COUNT(Application ID) WHERE Gender = 'Female'` → **2,610** |
+| KPI-9 Specially Abled Count | Count of applicants with any specially-abled classification | `COUNT(Application ID) WHERE Specially Abled Type ≠ NULL` → **1,501** |
+| KPI-10 Rural Count | Count of applicants with Rural residential type | `COUNT(Application ID) WHERE Residential Type = 'Rural'` → **2,610** |
+| KPI-11 Avg EMI Ratio | Average ratio of EMI to monthly income (affordability indicator) | `AVG(EMI Amount INR / Monthly Income INR)` → **0.30** |
 
 Document KPI logic clearly in `notebooks/04_statistical_analysis.ipynb` and `notebooks/05_final_load_prep.ipynb`.
 
@@ -115,10 +136,12 @@ Document KPI logic clearly in `notebooks/04_statistical_analysis.ipynb` and `not
 
 | Item | Details |
 |---|---|
-| **Dashboard URL** | _Paste Tableau Public link here_ |
-| **Executive View** | _Describe the high-level KPI summary view_ |
-| **Operational View** | _Describe the detailed drill-down view_ |
-| **Main Filters** | _List the interactive filters used_ |
+| **Dashboard URL** | 'https://public.tableau.com/views/Capstone2_17769441478690/Dasboard-4-LoanFinancialDeep-Dive?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link' |
+| **Dashboard 1 – Loan Overview** | Top-level KPIs (Total Applications, Total Loan, Avg Risk Score, Avg TAT), Sector Breakdown heatmap by gender, Risk Score Distribution, TAT Analysis by district, District Overview loan amounts |
+| **Dashboard 2 – Repayment & Risk** | Late Payments, Avg Credit Score, Total Defaulted Loans KPIs; Repayment by District, Default Rate by Sector, Repayment Status Split, Avg Risk Score by Gender & District heatmap |
+| **Dashboard 3 – Applicant Profile & Inclusion** | Female Applicants, Specially Abled, Rural Count KPIs; Gender × Residential stacked bar, Specially Abled Breakdown pie, Enterprise Type by district, Sector × Enterprise type matrix |
+| **Dashboard 4 – Loan & Financial Deep-Dive** | Avg EMI Ratio KPI; Loan Distribution histogram, Loan vs Project Cost scatter, Risk Score by Sector box plots, Avg Loan Amount by District, Income by Gender distribution |
+| **Main Filters** | Sector, District Name, Gender, Residential Type, Enterprise Type, Repayment Status |
 
 Store dashboard screenshots in [`tableau/screenshots/`](tableau/screenshots/) and document the public links in [`tableau/dashboard_links.md`](tableau/dashboard_links.md).
 
@@ -126,28 +149,28 @@ Store dashboard screenshots in [`tableau/screenshots/`](tableau/screenshots/) an
 
 ## Key Insights
 
-_List 8-12 major findings from the analysis, written in decision language. Each insight should tell the reader what to think or act upon, not merely describe a chart._
-
-1. _Insight 1_
-2. _Insight 2_
-3. _Insight 3_
-4. _Insight 4_
-5. _Insight 5_
-6. _Insight 6_
-7. _Insight 7_
-8. _Insight 8_
+1. **Total loan disbursement stands at ₹546 Cr across 2,610 applications**, with Doda district receiving the highest average loan amounts, suggesting it is the primary beneficiary district.
+2. **The average turnaround time is 188 days**, indicating significant pipeline delays across verification and approval stages — Pulwama shows the widest TAT spread among districts.
+3. **₹82 Cr (15% of total disbursement) is at default risk**, with Tourism and Healthcare sectors exhibiting the highest default rates (above 15%), requiring immediate risk monitoring.
+4. **863 applications (33% of total) are in late repayment status**, concentrated across Doda and Pulwama, signalling localised repayment stress.
+5. **Average credit score is 50 and average risk score is 51**, both around the midpoint scale, suggesting the applicant pool has moderate and relatively uniform credit risk — differentiation is sector- and district-driven.
+6. **1,501 specially-abled applicants (57.5% of total) were served**, with Locomotor (350) and Visual (395) categories being most represented, demonstrating strong inclusion outreach.
+7. **Nano Entrepreneur enterprise type dominates across most sectors**, particularly in IT and Services, while Retail has the highest share of Existing Enterprises — pointing to different maturity profiles by sector.
+8. **Avg EMI Ratio of 0.30 indicates moderate affordability pressure**, with income distribution peaking in the ₹60K–₹70K monthly range, suggesting most borrowers are at or near recommended EMI-to-income thresholds.
+9. **Loan amount closely tracks project cost in a near-linear relationship**, confirming that lending decisions are project-cost-driven with limited over- or under-financing.
+10. **Risk score distributions are broadly similar across sectors**, but Agri and Tourism show the widest inter-quartile spread, implying greater applicant heterogeneity in these sectors.
 
 ---
 
 ## Recommendations
 
-_Provide 3-5 specific, actionable business recommendations, each linked directly to an insight above._
-
 | # | Insight | Recommendation | Expected Impact |
 |---|---|---|---|
-| 1 | _Which insight does this address?_ | _What should the stakeholder do?_ | _What measurable impact do you expect?_ |
-| 2 | _Which insight does this address?_ | _What should the stakeholder do?_ | _What measurable impact do you expect?_ |
-| 3 | _Which insight does this address?_ | _What should the stakeholder do?_ | _What measurable impact do you expect?_ |
+| 1 | Tourism and Healthcare have default rates above 15% | Introduce sector-specific post-disbursement monitoring and mandatory quarterly check-ins for Tourism and Healthcare loans above ₹10L | Reduce default rate by 3–5 percentage points within 12 months |
+| 2 | Average TAT of 188 days creates pipeline bottlenecks | Digitise and parallel-process BHD and SBDU verification stages; set SLA targets of ≤ 30 days per stage | Reduce total TAT to under 120 days, improving applicant experience and reducing dropout |
+| 3 | 863 late-payment applications concentrated in Doda and Pulwama | Deploy district-level loan counsellors and SMS-based repayment reminder campaigns in Doda and Pulwama | Reduce late-payment count by 20–25% within two repayment cycles |
+| 4 | Avg EMI Ratio of 0.30 is near the 33% affordability ceiling | Cap loan sanctioning for applicants with projected EMI Ratio > 0.35; offer restructured repayment schedules for existing high-ratio borrowers | Reduce future default probability by pre-empting affordability stress |
+| 5 | Nano Entrepreneurs dominate IT and Services but receive relatively smaller average loans | Design a dedicated Nano Entrepreneur loan tier with faster approval, lower documentation burden, and mentorship linkage | Increase formalisation and repayment rates among the fastest-growing enterprise segment |
 
 ---
 
@@ -283,16 +306,16 @@ This table must match evidence in GitHub Insights, PR history, and committed fil
 
 | Team Member | Dataset and Sourcing | ETL and Cleaning | EDA and Analysis | Statistical Analysis | Tableau Dashboard | Report Writing | PPT and Viva |
 |---|---|---|---|---|---|---|---|
-| _Member 1_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ |
-| _Member 2_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ |
-| _Member 3_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ |
-| _Member 4_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ |
-| _Member 5_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ |
-| _Member 6_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ |
+| Bhargav Patil | Support | Support | Owner | Owner | Owner | Owner | Support |
+| Hardik Hathwal | Owner | Support | Support | Support | Support | Support | Owner |
+| Sibtain Ahmed Qureshi | Support | Owner | Owner | Owner | Owner | Owner | Support |
+| Kabir Sharma | Support | Support | Owner | Support | Support | Support | Owner |
+| Bhawana | Support | Support | Support | Support | Owner | Support | Support |
+| Rohan | Support | Support | Support | Support | Support | Owner | Owner |
 
 _Declaration: We confirm that the above contribution details are accurate and verifiable through GitHub Insights, PR history, and submitted artifacts._
 
-**Team Lead Name:** _____________________________
+**Team Lead Name:** Bhargav Patil
 
 **Date:** _______________
 
@@ -305,4 +328,3 @@ All analysis, code, and recommendations in this repository must be the original 
 ---
 
 *Newton School of Technology - Data Visualization & Analytics | Capstone 2*
-
