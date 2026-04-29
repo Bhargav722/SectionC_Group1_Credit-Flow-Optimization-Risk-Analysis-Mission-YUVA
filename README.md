@@ -51,13 +51,13 @@ If you are working in Google Colab:
 |---|---|---|
 | Project Lead | Bhargav Patil | [GitHub](https://github.com/Bhargav722) / [Portfolio](https://bhargav722.github.io/dva-portfolio/) |
 | Data Lead | Hardik Hathwal | `https://github.com/Kidrah-kun` |
-| ETL Lead | _Name_ | `github-handle` |
-| Analysis Lead | Kabir Sharma | https://github.com/Kabir-glitch |
-| Visualization Lead | _Name_ | `github-handle` |
-| Analysis Lead | _Name_ | `github-handle` |
+| ETL Lead | Sibtain Ahmed Qureshi | 'https://github.com/Sibtain28' |
+| Analysis Lead | Sibtain Ahmed Qureshi, Kabir Sharma | 'https://github.com/Sibtain28', 'https://github.com/Kabir-glitch' |
+| Visualization Lead | Bhargav Patil, Sibtain Ahmed Qureshi | `https://github.com/Sibtain28` |
+| Analysis Lead |Bhargav Patil, Sibtain Ahmed Qureshi | `https://github.com/Sibtain28` |
 | Visualization Lead | Bhawana | `https://github.com/bhawanaydv` |
-| Strategy Lead | _Name_ | `github-handle` |
-| PPT and Quality Lead | _Name_ | `github-handle` |
+| Strategy Lead | Bhargav Patil | `github-handle` |
+| PPT and Quality Lead | Kabir, Rohan, Hardik | `github-handle` |
 
 ---
 
