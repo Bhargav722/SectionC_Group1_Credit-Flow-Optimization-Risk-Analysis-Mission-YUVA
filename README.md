@@ -39,11 +39,11 @@ If you are working in Google Colab:
 |---|---|
 | **Project Title** | Mission Yuva – Loan & Financial Analysis |
 | **Sector** | Finance / Government Lending (J&K Youth Entrepreneurship) |
-| **Team ID** | _To be filled by team_ |
-| **Section** | _To be filled by team_ |
-| **Faculty Mentor** | _To be filled by team_ |
+| **Team ID** | Group -1  |
+| **Section** | C |
+| **Faculty Mentor** | Archit Raj |
 | **Institute** | Newton School of Technology |
-| **Submission Date** | _To be filled by team_ |
+| **Submission Date** | 29 April |
 
 ### Team Members
 
@@ -317,7 +317,7 @@ _Declaration: We confirm that the above contribution details are accurate and ve
 
 **Team Lead Name:** Bhargav Patil
 
-**Date:** _______________
+**Date:** 29 April 2026
 
 ---
 
